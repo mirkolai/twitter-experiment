@@ -16,7 +16,7 @@ while len(myList) > 0:
         parameter = ','.join(myList[0:100]) #max 100 id per request
         myList[0:100] =[]
         try:
-            place_endpoint ="https://api.twitter.com/1.1/statuses/lookup.json?id="+parameter
+            place_endpoint ="https://api.twitter.com/1.1/statuses/lookup.json?id="+parameter+"&tweet_mode=extended"
             response, data = client.request(place_endpoint)
 
             if response['status']=='200':
